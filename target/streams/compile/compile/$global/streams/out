@@ -1,2 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/juancho/Programing/juanchodb/app/controllers/PrestamosController.java:37:1:  void cannot be converted to models.Prestamo[0m
-[0m[[0m[31merror[0m] [0m[0m        Prestamo ans = Prestamo.delete(id);[0m
