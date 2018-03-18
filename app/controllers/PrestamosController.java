@@ -2,11 +2,13 @@ package controllers;
 
 import play.mvc.*;
 import play.libs.Json;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import models.*;
 
 import java.util.List;
+import java.util.Date;
 
 public class PrestamosController extends Controller {
 
@@ -17,18 +19,20 @@ public class PrestamosController extends Controller {
 
     public Result create() {
         JsonNode json = request().body().asJson();
-        String name = json.findPath("name").textValue();
-        if(name == null) {
-            return badRequest("Missing parameter [name]");
-        } else {
-            return ok("Hello " + name);
-        }
-        // return ok( "create" );
+
+        Prestamo prestamo = new Prestamo();
+        prestamo.student_id = json.findValue("student_id").bigIntegerValue();
+        prestamo.bici_id = json.findValue("bici_id").bigIntegerValue();
+        prestamo.solicitud =  json.findValue("solicitud").textValue();
+
+        prestamo.save();
+
+        return ok(Json.toJson(prestamo));
     }
 
     public Result show(Integer id) {
-
-        return ok( "show " + id );
+        Prestamo prestamo = Prestamo.find.byId(id);
+        return ok( Json.toJson(prestamo) );
     }
 
     public Result update(Integer id) {
