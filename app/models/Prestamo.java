@@ -1,11 +1,9 @@
 package models;
 
 import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.TreeMap;
 
 import io.ebean.Model;
+import io.ebean.Finder;
 
 import javax.persistence.Id;
 import javax.persistence.Entity;
