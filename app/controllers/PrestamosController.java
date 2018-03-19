@@ -41,7 +41,7 @@ public class PrestamosController extends Controller {
 
     private Prestamo getRequests(Prestamo prestamo) {
         JsonNode json = request().body().asJson();
-
+        
         prestamo.student_id = json.findValue("student_id").bigIntegerValue();
         prestamo.bici_id = json.findValue("bici_id").bigIntegerValue();
         prestamo.solicitud =  json.findValue("solicitud").textValue();

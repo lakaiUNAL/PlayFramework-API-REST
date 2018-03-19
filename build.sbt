@@ -3,11 +3,12 @@ organization := "com.jcg"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean).disablePlugins(PlayFilters)
 
 scalaVersion := "2.12.4"
 
 libraryDependencies += guice
+libraryDependencies += evolutions
 libraryDependencies += jdbc
 libraryDependencies += javaWs
 libraryDependencies += "mysql" % "mysql-connector-java" % "6.0.6"
