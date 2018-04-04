@@ -6,6 +6,7 @@ import io.ebean.Finder;
 import java.math.BigInteger;
 import javax.persistence.Id;
 import javax.persistence.Entity;
+
 import play.data.format.*;
 
 @Entity
@@ -20,5 +21,17 @@ public class Prestamo extends Model {
     public String solicitud;
 
     public static final Finder<Integer, Prestamo> find = new Finder<>(Prestamo.class);
+
+    public void setStudentId(BigInteger student_id){
+        this.student_id = student_id;
+    }
+    
+    public void setBiciId(BigInteger bici_id){
+        this.bici_id = bici_id;
+    }
+    
+    public void setSolicitud(String solicitud){
+        this.solicitud = solicitud;
+    }
 
 }

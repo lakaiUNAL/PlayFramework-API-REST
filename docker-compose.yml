@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: historial
       MYSQL_HOST: historial-db
   historial-ms:
-    image: jcgamar/historial-bicirun:estable
+    image: jcgamar/historial-bicirun
     ports:
       - "9000:9000"
     depends_on:
