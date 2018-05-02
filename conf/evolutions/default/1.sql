@@ -8,6 +8,7 @@ create table prestamo (
   student_id                    bigint,
   bici_id                       bigint,
   solicitud                     varchar(255),
+  entrega                       varchar(255),
   constraint pk_prestamo primary key (id)
 );
 

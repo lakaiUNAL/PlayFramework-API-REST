@@ -19,6 +19,7 @@ public class Prestamo extends Model {
     
     @Formats.DateTime(pattern="dd/MM/yyyy")
     public String solicitud;
+    public String entrega;
 
     public static final Finder<Integer, Prestamo> find = new Finder<>(Prestamo.class);
 
@@ -32,6 +33,10 @@ public class Prestamo extends Model {
     
     public void setSolicitud(String solicitud){
         this.solicitud = solicitud;
+    }
+
+    public void setEntrega(String entrega){
+        this.entrega = entrega;
     }
 
 }

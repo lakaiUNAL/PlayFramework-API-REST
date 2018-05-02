@@ -78,6 +78,8 @@ public class PrestamosController extends Controller {
             prestamo.setBiciId( json.findValue("bici_id").bigIntegerValue() );
         if(json.has("solicitud"))
             prestamo.setSolicitud ( json.findValue("solicitud").textValue() );
+        if(json.has("entrega"))
+            prestamo.setEntrega ( json.findValue("entrega").textValue() );
 
         return prestamo;
     }
